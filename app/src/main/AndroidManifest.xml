@@ -8,25 +8,38 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:process=":remote" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main2"></activity>
+        <activity android:name=".Main2" />
+        <activity
+            android:name=".DemoActivity_1"
+            android:configChanges="screenLayout"
+            android:exported="true"
+            android:launchMode="standard" />
+        <activity
+            android:name=".DemoActivity_2"
+            android:configChanges="screenLayout"
+            android:exported="true"
+            android:launchMode="standard" />
+
         <receiver android:name=".MyAppWidgetProvider">
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/appwidget_provider_info">
-            </meta-data>
-            <intent-filter>
-                <action android:name="com.zlm.action.CLICK"/>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
-            </intent-filter>
+                android:resource="@xml/appwidget_provider_info"></meta-data>
 
+            <intent-filter>
+                <action android:name="com.zlm.action.CLICK" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
         </receiver>
+
+        <activity android:name=".Main3"></activity>
     </application>
 
 </manifest>
